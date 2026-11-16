@@ -23,10 +23,10 @@ export default function HomeContactSection() {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.7 }}
           >
-            <span className={styles.badge}>EXECUTIVE CONSULTATION</span>
+            <span className={styles.badge}>MERCHANT ACCOUNT SUPPORT</span>
             <h2 className={styles.heading}>Contact Us</h2>
             <p className={styles.subheading}>
-              Whether you need scalable Next.js engineering, merchant account advisory, AI automation pipelines, or data-driven digital growth, our senior team is ready to assist.
+              Talk with our team about merchant account setup, payment gateway coordination, transaction monitoring, reconciliation, or e-commerce account support.
             </p>
 
             <div className={styles.benefitsList}>
@@ -55,8 +55,8 @@ export default function HomeContactSection() {
                   <EmailOutlinedIcon fontSize="small" />
                 </div>
                 <div>
-                  <p className={styles.benefitTitle}>Prompt Technical Evaluation</p>
-                  <p className={styles.benefitDesc}>Receive a comprehensive response and feasibility review within 24
+                  <p className={styles.benefitTitle}>Prompt Account Support</p>
+                  <p className={styles.benefitDesc}>Receive a clear response and review of your account support needs within 24
                     business hours.</p>
                 </div>
               </div>

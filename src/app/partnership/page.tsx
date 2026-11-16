@@ -24,16 +24,16 @@ import styles from './partnership.module.css';
 import Logo from "../../../public/logo/logo.png"
 
 export const metadata: Metadata = constructMetadata({
-  title: 'UK–India Strategic Partnership | Grace Technologies & Ank Square',
+  title: 'UK–India Partnership with Ank Square',
   description:
-    'See how UK-based Grace Technologies and Indian partner Ank Square combine business leadership and engineering to deliver digital services for UK clients.',
+    'See how UK-based Grace Technologies and Indian partner Ank Square work together to support merchant account management and payment operations.',
   canonicalPath: '/partnership',
   keywords: [
     'UK India technology partnership',
     'Bilateral technology alliance',
     'Grace Technologies and Ank Square',
-    'Cross-border digital transformation',
-    'UK technology consultancy India delivery',
+    'UK India merchant account management',
+    'Cross-border payment operations support',
   ],
 });
 
@@ -64,7 +64,7 @@ export default function PartnershipPage() {
                 Indian Technology Expertise.
               </h1>
               <p className={styles.heroSubtitle}>
-                Grace Technologies is a UK-based service company partnered with Ank Square in India. Together, we bring British business vision and Indian technology expertise to deliver digital systems and business transformation for our clients.
+                Grace Technologies is a UK-based Merchant Account Management provider partnered with Ank Square in India. Together, we support merchant account administration and dependable payment operations for our clients.
               </p>
             </div>
 
@@ -182,16 +182,16 @@ export default function PartnershipPage() {
 
               <p className={styles.profileRole}>{india.role}</p>
               <p className={styles.profileDesc}>
-                Based in India, Ank Square Private Limited serves as our premier engineering and technology execution partner. Their high-caliber engineering team implements modern web platforms, AI automation systems, and complex digital integrations.
+                Based in India, Ank Square Private Limited is our delivery partner for merchant account administration and payment operations support.
               </p>
 
               <div className={styles.coreContributions}>
                 <h4 className={styles.contribTitle}>Key Responsibilities:</h4>
                 <ul className={styles.contribList}>
-                  <li>Full-stack Next.js and TypeScript engineering</li>
-                  <li>AI agent pipelines, OCR systems, and custom automation</li>
-                  <li>DevOps, continuous deployment, and security hardening</li>
-                  <li>Technical SEO architecture & performance engineering</li>
+                  <li>Merchant account setup and maintenance</li>
+                  <li>Payment gateway and seller account coordination</li>
+                  <li>Transaction monitoring and payment reconciliation</li>
+                  <li>Chargeback documentation and dispute support</li>
                 </ul>
               </div>
 

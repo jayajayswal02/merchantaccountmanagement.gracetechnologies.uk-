@@ -101,7 +101,7 @@ export default function ContactForm() {
       email: '',
       phone_number: '+44 ',
       country: 'United Kingdom',
-      service: 'Website Development',
+      service: 'Merchant Account Management',
       message: '',
       botCheck: '',
     },
@@ -165,7 +165,7 @@ export default function ContactForm() {
           email: '',
           phone_number: '+44 ',
           country: 'United Kingdom',
-          service: 'Website Development',
+          service: 'Merchant Account Management',
           message: '',
           botCheck: '',
         });
@@ -365,11 +365,7 @@ export default function ContactForm() {
                   className={`${styles.select} ${errors.service ? styles.inputError : ''}`}
                   {...register('service')}
                 >
-                  <option value="Website Development">Website Development</option>
                   <option value="Merchant Account Management">Merchant Account Management</option>
-                  <option value="AI Automation">AI Automation</option>
-                  <option value="Digital Marketing">Digital Marketing</option>
-                  <option value="Other">Other</option>
                 </select>
                 <KeyboardArrowDownIcon className={styles.selectArrowIcon} aria-hidden="true" />
               </div>

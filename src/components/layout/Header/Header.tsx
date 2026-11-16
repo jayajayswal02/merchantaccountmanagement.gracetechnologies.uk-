@@ -8,10 +8,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import CodeIcon from '@mui/icons-material/Code';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import SmartToyIcon from '@mui/icons-material/SmartToy';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import Container from '@/components/common/Container/Container';
 import Button from '@/components/common/Button/Button';
 import { openEnquiryModal } from '@/utils/modal';
@@ -21,28 +18,10 @@ import Image from 'next/image';
 
 const servicesList = [
   {
-    title: 'Website Development',
-    href: '/services/website-development',
-    description: 'Digital experiences designed to make an impact. High-performance Next.js architectures.',
-    icon: CodeIcon,
-  },
-  {
     title: 'Merchant Account Management',
     href: '/services/merchant-account-management',
-    description: 'Payment operations, documentation advisory and ongoing provider coordination.',
+    description: 'Payment operations, transaction monitoring, reconciliation, and account support.',
     icon: AccountBalanceWalletIcon,
-  },
-  {
-    title: 'AI Automation',
-    href: '/services/ai-automation',
-    description: 'Workflow orchestration, intelligent customer engines, and custom enterprise AI solutions.',
-    icon: SmartToyIcon,
-  },
-  {
-    title: 'Digital Marketing',
-    href: '/services/digital-marketing',
-    description: 'Data-driven SEO, conversion optimization, and high-impact multi-channel acquisition.',
-    icon: TrendingUpIcon,
   },
 ];
 
@@ -156,7 +135,7 @@ export default function Header() {
                         className={styles.allServicesLink}
                         onClick={() => setServicesOpen(false)}
                       >
-                        <span>View All Services</span>
+                        <span>View Service Overview</span>
                         <ArrowForwardIcon fontSize="inherit" />
                       </Link>
                     </div>
@@ -170,12 +149,6 @@ export default function Header() {
               className={`${styles.navLink} ${pathname.startsWith('/project') ? styles.active : ''}`}
             >
               Projects
-            </Link>
-            <Link
-              href="/client"
-              className={`${styles.navLink} ${pathname.startsWith('/client') ? styles.active : ''}`}
-            >
-              Clients
             </Link>
             <Link
               href="/partnership"
@@ -251,9 +224,6 @@ export default function Header() {
                 </div>
                 <Link href="/projects" className={styles.mobileLink}>
                   Projects
-                </Link>
-                <Link href="/client" className={styles.mobileLink}>
-                  Clients
                 </Link>
                 <Link href="/partnership" className={styles.mobileLink}>
                   UK–India Partnership

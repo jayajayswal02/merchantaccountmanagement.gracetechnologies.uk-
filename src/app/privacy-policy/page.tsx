@@ -54,9 +54,9 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className={styles.legalSection}>
-            <h2>4. AI and Confidentiality Safeguards</h2>
+            <h2>4. Operational Data Safeguards</h2>
             <p>
-              We adhere to strict zero-data-retention agreements when configuring AI automation solutions. Client proprietary datasets, internal documents, and enterprise knowledge bases are never utilized to train public machine learning models.
+              Information handled as part of merchant account and payment operations support is used to provide the requested services and protected in line with applicable data-protection requirements. Please do not send passwords or full payment card details through ordinary email or contact forms.
             </p>
           </section>
 

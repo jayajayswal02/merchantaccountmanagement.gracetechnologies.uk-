@@ -10,16 +10,23 @@ import { SEO_CONFIG } from '@/lib/seo/config';
 import styles from './services.module.css';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Technology & Digital Services',
+  title: 'Merchant Account Management Services UK',
   description:
-    'Explore website development, merchant account management, AI automation and digital marketing from Grace Technologies in the UK, with Ank Square in India.',
+    'Explore merchant account management support from Grace Technologies, helping businesses manage merchant accounts, payment processes and account operations.',
   canonicalPath: '/services',
   keywords: [
-    'Business technology services UK',
-    'Technology solutions UK',
-    'Custom software development',
-    'Enterprise digital services',
-    'AI automation solutions',
+    'Merchant Account Management Services UK',
+    'Merchant Account Management UK',
+    'Merchant Account Support UK',
+    'Merchant Account Setup Support',
+    'Payment Gateway Support',
+    'Payment Processing Support',
+    'E-commerce Payment Support',
+    'Transaction Monitoring',
+    'Payment Reconciliation Services',
+    'Chargeback Management Support',
+    'Merchant Account Reporting',
+    'Online Payment Management',
   ],
 });
 
@@ -43,11 +50,12 @@ export default function ServicesPage() {
 
       {/* Conversion CTA */}
       <ServiceCTASection
-        title="Ready to Transform Your Digital Infrastructure?"
-        description="Speak with our strategic consulting team in the UK and discover how our collaborative approach accelerates delivery."
-        primaryCtaText="Discuss Your Project"
-        secondaryCtaText="Explore Case Studies"
-        secondaryCtaHref="/projects"
+        title="Ready to Simplify Your Merchant Account Operations?"
+        description="Talk with our UK team about account setup, payment workflows, or ongoing e-commerce account support."
+        primaryCtaText="Get a Quote"
+        serviceTitle="Merchant Account Management"
+        secondaryCtaText="Contact Us"
+        secondaryCtaHref="/contact"
       />
     </div>
   );

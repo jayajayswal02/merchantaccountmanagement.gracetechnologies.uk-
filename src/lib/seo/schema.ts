@@ -17,9 +17,6 @@ export function getOrganizationSchema() {
     description: SEO_CONFIG.defaultDescription,
     email: SEO_CONFIG.contact.uk.email,
     telephone: SEO_CONFIG.contact.uk.phone,
-    priceRange: '££',
-    currenciesAccepted: 'GBP, USD, EUR, INR',
-    paymentAccepted: 'Bank Transfer, Stripe, Credit Card',
     address: {
       '@type': 'PostalAddress',
       streetAddress: SEO_CONFIG.contact.uk.addressLines[0],
@@ -46,21 +43,20 @@ export function getOrganizationSchema() {
         '@type': 'AdministrativeArea',
         name: 'England',
       },
-      {
-        '@type': 'Country',
-        name: 'India',
-      },
     ],
     knowsAbout: [
-      'Website Development',
-      'Next.js Full-Stack Engineering',
-      'AI Automation & Intelligent Workflows',
-      'Merchant Account Operations',
-      'Digital Marketing & Search Engine Optimisation (SEO)',
-      'Generative Engine Optimisation (GEO)',
-      'Answer Engine Optimisation (AEO)',
-      'B2B Organic Lead Generation UK',
-      'High-Intent Client Acquisition Architecture',
+      'Merchant Account Management',
+      'Merchant Account Management Services',
+      'Merchant Account Setup',
+      'Payment Gateway Management',
+      'Online Payment Management',
+      'Payment Operations Support',
+      'Transaction Monitoring',
+      'Payment Reconciliation',
+      'Chargeback Management',
+      'Amazon Seller Account Management',
+      'Flipkart Seller Account Management',
+      'E-commerce Account Management',
     ],
     sameAs: SEO_CONFIG.socialLinks,
   };
@@ -106,10 +102,6 @@ export function getServiceSchema({
     {
       '@type': 'AdministrativeArea',
       name: 'England',
-    },
-    {
-      '@type': 'Country',
-      name: 'India',
     },
   ];
 
@@ -223,8 +215,9 @@ export function getBlogIndexSchema(posts: Array<{ title: string; url: string; da
     '@type': 'CollectionPage',
     '@id': `${SEO_CONFIG.siteUrl}/blog#collection`,
     url: `${SEO_CONFIG.siteUrl}/blog`,
-    name: 'Grace Technologies Insights & Thought Leadership',
-    description: 'Expert publications on UK website development, enterprise AI automation, answer engine optimization (AEO), generative engine optimization (GEO), and merchant operations.',
+    name: 'Merchant Account Management Insights | Grace Technologies',
+    description:
+      'Practical guidance on merchant account administration, payment operations, transaction monitoring, reconciliation, and e-commerce account management.',
     publisher: {
       '@id': SEO_CONFIG.organizationId,
     },
@@ -238,4 +231,3 @@ export function getBlogIndexSchema(posts: Array<{ title: string; url: string; da
     })),
   };
 }
-

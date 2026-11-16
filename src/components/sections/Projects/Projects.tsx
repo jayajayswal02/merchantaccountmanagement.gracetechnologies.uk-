@@ -34,7 +34,7 @@ export default function Projects({ initialProjects = PROJECTS_DATA }: ProjectsPr
           label="OUR PROJECTS"
           title="Ideas Into Real"
           highlightText="Digital Solutions"
-          description="Explore some of the solutions we have delivered across web development, payment systems, AI automation and digital marketing for businesses around the world."
+          description="Explore selected past engagements and learn how Grace Technologies supports merchant accounts and payment operations."
           viewAllHref="/projects"
         />
 
@@ -53,4 +53,3 @@ export default function Projects({ initialProjects = PROJECTS_DATA }: ProjectsPr
     </section>
   );
 }
-

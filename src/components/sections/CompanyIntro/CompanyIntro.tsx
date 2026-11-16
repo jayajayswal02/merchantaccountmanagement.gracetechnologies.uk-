@@ -40,7 +40,7 @@ export default function CompanyIntro() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              Grace Technologies combines technology and business expertise to help UK companies move forward. We provide website development, merchant account management, AI automation and digital marketing in partnership with Ank Square in India.
+              Grace Technologies helps UK businesses streamline payment operations through merchant account setup, transaction monitoring, reconciliation, and e-commerce account support. We work in partnership with Ank Square in India.
             </motion.p>
 
             <motion.div
@@ -69,13 +69,14 @@ export default function CompanyIntro() {
                 <span className={styles.dot} />
                 <span className={styles.dot} />
                 <span className={styles.dot} />
-                <span className={styles.systemTag}>SYSTEM ARCHITECTURE // GT-UK-IN</span>
+                <span className={styles.systemTag}>MERCHANT OPERATIONS // GT-UK-IN</span>
               </div>
 
               <div className={styles.cardContent}>
-                <p className={styles.cardHeading}>Technology That Delivers Real Results.</p>
+                <p className={styles.cardHeading}>Merchant Operations That Keep Business Moving.</p>
                 <p className={styles.cardText}>
-                  At Grace Technologies, we combine strategic business insight with technical excellence to deliver solutions that create lasting value. From software and mobile application development to AI automation and digital services, every project is strategically managed in the United Kingdom and executed by our dedicated technology delivery partner, Ank Square Private Limited, India. This approach enables us to deliver scalable, efficient, and high-quality solutions aligned with our clients' business objectives.                </p>
+                  Our team helps businesses manage merchant accounts, payment gateways, transactions, settlements, and e-commerce operations. Client relationships are managed in the United Kingdom in partnership with Ank Square Private Limited in India, giving businesses a clear and reliable point of contact for ongoing account support.
+                </p>
                 <div className={styles.valuesList}>
                   <div className={styles.valueItem}>
                     <div className={styles.valueCheck}>✓</div>
@@ -87,15 +88,15 @@ export default function CompanyIntro() {
                   <div className={styles.valueItem}>
                     <div className={styles.valueCheck}>✓</div>
                     <div>
-                      <p className={styles.valTitle}>Tailored Technology Solutions</p>
-                      <p className={styles.valDesc}>Developing custom, scalable, and maintainable solutions designed around your business needs.</p>
+                      <p className={styles.valTitle}>Account Support Built Around You</p>
+                      <p className={styles.valDesc}>Organising merchant account and payment workflows around your business needs.</p>
                     </div>
                   </div>
                   <div className={styles.valueItem}>
                     <div className={styles.valueCheck}>✓</div>
                     <div>
-                      <p className={styles.valTitle}>Reliable Project Delivery</p>
-                      <p className={styles.valDesc}>Ensuring transparent communication, structured project management, timely delivery, and ongoing support.</p>
+                      <p className={styles.valTitle}>Reliable Ongoing Support</p>
+                      <p className={styles.valDesc}>Providing transparent communication, timely follow-up, and ongoing account administration.</p>
                     </div>
                   </div>
                 </div>

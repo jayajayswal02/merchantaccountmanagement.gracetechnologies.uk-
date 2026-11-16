@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     template: SEO_CONFIG.titleTemplate,
   },
   description: SEO_CONFIG.defaultDescription,
-  verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION || '',
-  },
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
   icons: {
     apple: SEO_CONFIG.appleTouchIcon,
   },
@@ -29,24 +29,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: SEO_CONFIG.locale,
     url: SEO_CONFIG.siteUrl,
-    title: SEO_CONFIG.defaultTitle,
+    title: `${SEO_CONFIG.defaultTitle} | ${SEO_CONFIG.siteName}`,
     description: SEO_CONFIG.defaultDescription,
     siteName: SEO_CONFIG.siteName,
     images: [
       {
         url: SEO_CONFIG.defaultOgImage,
-        width: 1200,
-        height: 630,
-        alt: `${SEO_CONFIG.siteName} - British Corporate Excellence & Intelligent Technology`,
+        alt: `${SEO_CONFIG.siteName} logo`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: SEO_CONFIG.defaultTitle,
+    title: `${SEO_CONFIG.defaultTitle} | ${SEO_CONFIG.siteName}`,
     description: SEO_CONFIG.defaultDescription,
     images: [SEO_CONFIG.defaultOgImage],
-    creator: '@grace_Official4',
   },
   robots: {
     index: true,

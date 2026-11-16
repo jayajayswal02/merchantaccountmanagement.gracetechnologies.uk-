@@ -3,34 +3,17 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import Container from '@/components/common/Container/Container';
-import { BLOG_POSTS } from '@/data/blog';
+import { BLOG_POSTS, isMerchantAccountPost } from '@/data/blog';
 import styles from './BlogLanding.module.css';
 
-const FILTERS = [
-  'All',
-  'Website Development',
-  'AI Automation',
-  'Merchant Account Management',
-  'SEO',
-  'Digital Growth',
-  'Performance',
-];
-
-function getCategoryValue(post: (typeof BLOG_POSTS)[number]) {
-  if (post.tags.some((tag) => tag.toLowerCase().includes('website'))) return 'Website Development';
-  if (post.tags.some((tag) => tag.toLowerCase().includes('ai'))) return 'AI Automation';
-  if (post.tags.some((tag) => tag.toLowerCase().includes('merchant'))) return 'Merchant Account Management';
-  if (post.tags.some((tag) => tag.toLowerCase().includes('seo'))) return 'SEO';
-  if (post.tags.some((tag) => tag.toLowerCase().includes('performance'))) return 'Performance';
-  return 'Digital Growth';
-}
+const FILTERS = ['Merchant Account Management', 'All Articles'];
 
 export default function BlogLanding() {
-  const [selectedFilter, setSelectedFilter] = useState('All');
+  const [selectedFilter, setSelectedFilter] = useState('Merchant Account Management');
 
   const filteredPosts = useMemo(() => {
-    if (selectedFilter === 'All') return BLOG_POSTS;
-    return BLOG_POSTS.filter((post) => getCategoryValue(post) === selectedFilter);
+    if (selectedFilter === 'All Articles') return BLOG_POSTS;
+    return BLOG_POSTS.filter(isMerchantAccountPost);
   }, [selectedFilter]);
 
   const featuredPost = filteredPosts[0] ?? BLOG_POSTS[0];
@@ -41,10 +24,10 @@ export default function BlogLanding() {
       <Container size="wide">
         <header className={styles.hero}>
           <div className={styles.heroCopy}>
-            <span className={styles.eyebrow}>Insights, Strategy & Thought Leadership</span>
-            <h1>Technical Intelligence for Modern Enterprise Growth.</h1>
+            <span className={styles.eyebrow}>Merchant Account Management Insights</span>
+            <h1>Merchant Account Management Insights for UK Businesses</h1>
             <p>
-              In-depth strategic analyses, architectural blueprints, and actionable intelligence covering Next.js website engineering, Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), enterprise AI automation, and merchant payment infrastructure for UK & global enterprises.
+              Explore practical guidance on merchant account administration, payment operations, transaction monitoring, reconciliation, and e-commerce account management.
             </p>
 
             <div className={styles.filterBar} aria-label="Blog categories">
@@ -101,7 +84,7 @@ export default function BlogLanding() {
           <div className={styles.sectionHeader}>
             <div>
               <span className={styles.sectionLabel}>Knowledge Base & Topical Hub</span>
-              <h2>Authoritative Guides for Enterprise Leaders & Engineers</h2>
+              <h2>Guidance on Merchant Accounts and Payment Operations</h2>
             </div>
             <span className={styles.resultCount}>{filteredPosts.length} articles</span>
           </div>

@@ -21,9 +21,9 @@ export default function ServicesOverview({
     <section id="services-overview" className={styles.section}>
       <Container size="wide">
         <SectionHeading
-          label="CORE CAPABILITIES"
-          title="Our Services"
-          description="Integrated technology and business solutions that simplify operations, strengthen digital presence, and drive sustainable business growth."
+          label="OUR CORE SERVICE"
+          title="Merchant Account Management"
+          description="Reliable support for merchant account setup, payment gateways, transactions, reconciliation, disputes, and e-commerce operations."
           align="center"
           headingLevel={headingLevel}
         />
@@ -72,14 +72,14 @@ export default function ServicesOverview({
                       icon
                       onClick={() => openEnquiryModal(service.title)}
                     >
-                      Let's Talk
+                      Get a Quote
                     </Button>
                     <Button
                       href={service.route}
                       variant="outline"
                       size="md"
                     >
-                      Explore {service.title}
+                      Learn More
                     </Button>
                   </div>
                 </div>

@@ -16,16 +16,17 @@ import officesData from '@/config/offices.json';
 import styles from './contact.module.css';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Contact Grace Technologies | Discuss Your Project',
+  title: 'Contact Grace Technologies',
+  titleSuffix: 'Merchant Account Management UK',
   description:
-    'Discuss your goals with Grace Technologies in the UK: website development, merchant account management, AI automation and digital marketing for your business.',
+    'Contact Grace Technologies to discuss your merchant account management requirements and business payment support needs.',
   canonicalPath: '/contact',
   keywords: [
-    'Contact technology company UK',
+    'Merchant account management contact UK',
     'Grace Technologies contact',
-    'Website development consultation',
-    'AI automation enquiry',
-    'Digital solutions consultation UK',
+    'Payment operations support enquiry',
+    'E-commerce account management contact',
+    'Merchant account support UK',
   ],
 });
 
@@ -50,10 +51,10 @@ export default function ContactPage() {
           <div className={styles.layout}>
             {/* Left Column: Context, Trust, Offices */}
             <div className={styles.infoCol}>
-              <span className={styles.badge}>EXECUTIVE CONSULTATION</span>
-              <h1 className={styles.heading}>Your Next Move Starts With a Conversation.</h1>
+              <span className={styles.badge}>MERCHANT ACCOUNT SUPPORT</span>
+              <h1 className={styles.heading}>Let’s Talk About Your Payment Operations.</h1>
               <p className={styles.subheading}>
-                Start your next move with a conversation with our UK team about website development, merchant account management, AI automation or digital marketing.
+                Contact our UK team to discuss merchant account management, payment workflows, or e-commerce account support.
               </p>
 
               {/* UK Office Card */}

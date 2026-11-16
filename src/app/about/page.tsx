@@ -13,15 +13,16 @@ import { SEO_CONFIG } from '@/lib/seo/config';
 import styles from './about.module.css';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'About Grace Technologies | Our Expertise & Approach',
+  title: 'About Grace Technologies',
+  titleSuffix: 'Merchant Account Management',
   description:
-    'About Grace Technologies: our UK team works with Ank Square in India on websites, merchant accounts, AI automation and digital marketing for business growth.',
+    'Learn about Grace Technologies and our approach to helping businesses manage their merchant accounts and payment operations.',
   canonicalPath: '/about',
   keywords: [
-    'UK technology company',
-    'Technology solutions company',
-    'UK technology partner',
-    'Digital engineering services',
+    'About Grace Technologies',
+    'Merchant Account Management Company UK',
+    'Payment Operations Support UK',
+    'E-commerce account management',
     'UK India technology partnership',
   ],
 });
@@ -52,7 +53,7 @@ export default function AboutPage() {
                 Combining British Corporate Elegance With Global Technology Prowess.
               </h1>
               <p className={styles.heroSubtitle}>
-                Grace Technologies combines British corporate elegance with global technology prowess, partnering with Ank Square in India to deliver website development, merchant account management, AI automation and digital marketing.
+                Grace Technologies partners with Ank Square in India to help businesses manage merchant accounts, payment gateways, transaction workflows, and e-commerce operations.
               </p>
             </div>
 

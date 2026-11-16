@@ -9,7 +9,7 @@ import JsonLd from '@/components/seo/JsonLd';
 import { constructMetadata } from '@/lib/seo/metadata';
 import { getArticleSchema, getBreadcrumbSchema, getFaqSchema } from '@/lib/seo/schema';
 import { SEO_CONFIG } from '@/lib/seo/config';
-import { BLOG_POSTS } from '@/data/blog';
+import { BLOG_POSTS, isMerchantAccountPost } from '@/data/blog';
 import styles from './page.module.css';
 
 export function generateStaticParams() {
@@ -26,6 +26,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: 'This article could not be found.',
       canonicalPath: '/blog',
       noIndex: true,
+    });
+  }
+
+  if (!isMerchantAccountPost(post)) {
+    return constructMetadata({
+      title: 'Archived Grace Technologies Article',
+      description:
+        'This historical Grace Technologies article is retained for reference and is not part of our current service offering.',
+      canonicalPath: `/blog/${post.slug}`,
+      noIndex: true,
+      follow: true,
     });
   }
 
@@ -53,7 +64,12 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
     notFound();
   }
 
-  const relatedPosts = BLOG_POSTS.filter((item) => post.related.includes(item.slug)).slice(0, 3);
+  const currentServicePost = isMerchantAccountPost(post);
+  const relatedPosts = BLOG_POSTS.filter(
+    (item) =>
+      post.related.includes(item.slug) &&
+      (!currentServicePost || isMerchantAccountPost(item))
+  ).slice(0, 3);
   const articleSchema = getArticleSchema({
     title: post.title,
     description: post.excerpt,
@@ -67,16 +83,22 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: 'Home', url: SEO_CONFIG.siteUrl },
     { name: 'Blog', url: `${SEO_CONFIG.siteUrl}/blog` },
-    { name: post.title, url: `${SEO_CONFIG.siteUrl}/blog/${post.slug}` },
+    {
+      name: currentServicePost ? post.title : 'Archived Article',
+      url: `${SEO_CONFIG.siteUrl}/blog/${post.slug}`,
+    },
   ]);
   const faqSchema = getFaqSchema(post.faq);
+  const structuredData = currentServicePost
+    ? [articleSchema, breadcrumbSchema, faqSchema]
+    : [breadcrumbSchema];
 
   const visualKey = `visual${post.visual.charAt(0).toUpperCase()}${post.visual.slice(1)}` as keyof typeof styles;
   const visualClass = styles[visualKey] ?? styles.visualBlue;
 
   return (
     <div className={styles.page}>
-      <JsonLd data={[articleSchema, breadcrumbSchema, faqSchema]} />
+      <JsonLd data={structuredData} />
       <Breadcrumb items={[{ label: 'Blog', href: '/blog' }, { label: post.title }]} backHref="/blog" backLabel="Back to Blog" />
 
       <Container size="narrow">
@@ -122,7 +144,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
           </div>
 
           <div className={styles.ctaWrap}>
-            <EnquiryNowButton serviceType={post.category} />
+            <EnquiryNowButton serviceType="Merchant Account Management" />
           </div>
 
           <div className={styles.faqSection}>

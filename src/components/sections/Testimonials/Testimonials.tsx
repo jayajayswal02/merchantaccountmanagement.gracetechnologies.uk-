@@ -18,7 +18,6 @@ interface Testimonial {
   company: string;
   location: string;
   rating: number;
-  service: string;
   avatarInitial: string;
   content: string;
 }
@@ -156,7 +155,6 @@ export default function Testimonials() {
                             <StarIcon key={i} sx={{ fontSize: '1.125rem' }} />
                           ))}
                         </div>
-                        <span className={styles.serviceBadge}>{item.service}</span>
                       </div>
 
                       <div className={styles.quoteSymbol}>
@@ -209,4 +207,3 @@ export default function Testimonials() {
     </section>
   );
 }
-

@@ -3,12 +3,14 @@ import { SEO_CONFIG } from './config';
 
 export interface MetadataGeneratorOptions {
   title?: string;
+  titleSuffix?: string;
   description?: string;
   canonicalPath?: string;
   ogImage?: string;
   ogType?: 'website' | 'article';
   keywords?: string[];
   noIndex?: boolean;
+  follow?: boolean;
   alternateLocales?: Array<{ locale: string; path: string }>;
   publishedTime?: string;
   modifiedTime?: string;
@@ -17,18 +19,21 @@ export interface MetadataGeneratorOptions {
 
 export function constructMetadata({
   title,
+  titleSuffix = SEO_CONFIG.siteName,
   description,
   canonicalPath = '',
   ogImage,
   ogType = 'website',
   keywords = [],
   noIndex = false,
+  follow = true,
   alternateLocales,
   publishedTime,
   modifiedTime,
   authors = [],
 }: MetadataGeneratorOptions = {}): Metadata {
-  const pageTitle = title ? `${title} | ${SEO_CONFIG.siteName}` : SEO_CONFIG.defaultTitle;
+  const cleanTitle = title?.replace(new RegExp(`\\s*\\|\\s*${SEO_CONFIG.siteName}$`), '');
+  const pageTitle = `${cleanTitle || SEO_CONFIG.defaultTitle} | ${titleSuffix}`;
   const pageDescription = description || SEO_CONFIG.defaultDescription;
   const cleanPath = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
   const canonicalUrl = `${SEO_CONFIG.siteUrl}${cleanPath === '/' ? '' : cleanPath}`;
@@ -46,7 +51,7 @@ export function constructMetadata({
   }
 
   return {
-    title: pageTitle,
+    title: { absolute: pageTitle },
     description: pageDescription,
     keywords: keywords.length > 0 ? keywords : undefined,
     authors: authors.length > 0 ? authors.map((name) => ({ name })) : undefined,
@@ -67,9 +72,7 @@ export function constructMetadata({
       images: [
         {
           url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: `${pageTitle} - ${SEO_CONFIG.siteName}`,
+          alt: `${SEO_CONFIG.siteName} logo`,
         },
       ],
     },
@@ -78,7 +81,6 @@ export function constructMetadata({
       title: pageTitle,
       description: pageDescription,
       images: [ogImageUrl],
-      creator: '@grace_Official4',
     },
     other: {
       'geo.region': 'GB-LND',
@@ -88,10 +90,10 @@ export function constructMetadata({
     },
     robots: {
       index: !noIndex,
-      follow: !noIndex,
+      follow,
       googleBot: {
         index: !noIndex,
-        follow: !noIndex,
+        follow,
         'max-video-preview': -1,
         'max-image-preview': 'large',
         'max-snippet': -1,
@@ -99,4 +101,3 @@ export function constructMetadata({
     },
   };
 }
-

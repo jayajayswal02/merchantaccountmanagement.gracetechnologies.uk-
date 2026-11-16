@@ -44,10 +44,7 @@ interface ContactStats {
 
 const SERVICES = [
   'All Services',
-  'Website Development',
   'Merchant Account Management',
-  'AI Automation',
-  'Digital Marketing',
 ];
 
 const STATUSES = ['All Statuses', 'New', 'Contacted', 'Resolved', 'Spam'];
@@ -499,4 +496,3 @@ export default function ContactsClient() {
     </div>
   );
 }
-

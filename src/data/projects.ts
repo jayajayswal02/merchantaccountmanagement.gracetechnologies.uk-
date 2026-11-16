@@ -4,7 +4,7 @@ export interface ProjectItem {
   id: string;
   slug: string;
   title: string;
-  category: 'Website Development' | 'Merchant Account Management' | 'AI Automation' | 'Digital Marketing';
+  category: string;
   client: string;
   location: string;
   year: string;
@@ -12,13 +12,7 @@ export interface ProjectItem {
   metrics: string;
   tags: string[];
   deliverables: string[];
-  visualType: 'web' | 'merchant' | 'ai' | 'marketing' | 'client';
-  logo?: string;
-  image?: string;
-  presentationUrl?: string;
-  clientSlug?: string;
-  workType?: 'website' | 'logo' | 'visitingCard' | 'profile' | 'letterhead';
-  websiteUrl?: string;
+  visualType: 'merchant';
 }
 
 // All project records are loaded directly from src/config/projects.json

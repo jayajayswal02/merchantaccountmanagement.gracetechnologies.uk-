@@ -41,10 +41,7 @@ interface EnquiryStats {
 
 const SERVICES = [
   'All Services',
-  'Website Development',
   'Merchant Account Management',
-  'AI Automation',
-  'Digital Marketing',
 ];
 
 const STATUSES = ['All Statuses', 'New', 'Confirmed', 'Contacted', 'Spam'];

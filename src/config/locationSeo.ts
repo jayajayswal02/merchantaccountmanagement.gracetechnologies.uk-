@@ -13,7 +13,7 @@ export interface LocationSEOConfig {
   citySlug: string; // e.g. "london", "manchester"
   stateSlug: string; // e.g. "greater-london"
   countrySlug: string; // e.g. "england"
-  serviceSlug: string; // e.g. "website-development"
+  serviceSlug: string; // e.g. "merchant-account-management"
   published: boolean;
   indexable: boolean;
   priority?: number;

@@ -13,8 +13,8 @@ export default function HowWeWork() {
       <Container size="wide">
         <SectionHeading
           label="OUR METHODOLOGY"
-          title="From First Conversation to Lasting Impact."
-          description="A disciplined, transparent delivery methodology structured for velocity, precision, and enduring commercial outcomes."
+          title="A Clear Path to Better Payment Operations."
+          description="A practical, transparent process for understanding, configuring, monitoring, and maintaining your merchant accounts."
           align="center"
         />
 

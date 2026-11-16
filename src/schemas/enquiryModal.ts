@@ -10,18 +10,9 @@ export const quickEnquirySchema = z
       .refine((val) => /^[a-zA-Z\s.'-]+$/.test(val), {
         message: 'Please enter a valid name using letters only',
       }),
-    serviceType: z.enum(
-      [
-        'Website Development',
-        'Merchant Account Management',
-        'AI Automation',
-        'Digital Marketing',
-        'Other Consultation',
-      ],
-      {
-        message: 'Please choose a service',
-      }
-    ),
+    serviceType: z.enum(['Merchant Account Management'], {
+      message: 'Please choose a service',
+    }),
     country: z.string().trim().optional(),
     email: z
       .string()

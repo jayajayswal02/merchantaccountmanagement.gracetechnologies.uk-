@@ -101,7 +101,7 @@
   justify-content: center;
 }
 
-/* 01: Website Development Browser Mockup */
+
 .browserFrame {
   width: 100%;
   background: var(--color-panel-dark);
@@ -298,7 +298,6 @@
   font-size: 0.7rem;
 }
 
-/* 03: AI Automation Mockup */
 .processorWrapper {
   display: flex;
   flex-direction: column;
@@ -395,7 +394,6 @@
   animation: pulseNode 1.8s infinite;
 }
 
-/* 04: Digital Marketing Analytics Mockup */
 .analyticsFrame {
   width: 100%;
   background: var(--color-panel-dark);

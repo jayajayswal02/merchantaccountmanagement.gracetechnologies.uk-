@@ -4,7 +4,6 @@ import Hero from '@/components/sections/Hero/Hero';
 import CompanyIntro from '@/components/sections/CompanyIntro/CompanyIntro';
 import ServicesOverview from '@/components/sections/ServicesOverview/ServicesOverview';
 import Projects from '@/components/sections/Projects/Projects';
-import ClientSection from '@/components/sections/ClientSection/ClientSection';
 import WhyChooseUs from '@/components/sections/WhyChooseUs/WhyChooseUs';
 import HowWeWork from '@/components/sections/HowWeWork/HowWeWork';
 import PartnershipSection from '@/components/sections/PartnershipSection/PartnershipSection';
@@ -16,18 +15,26 @@ import GlobalOffices from '@/components/sections/GlobalOffices/GlobalOffices';
 import { constructMetadata } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Digital & Technology Solutions UK',
+  title: 'Merchant Account Management UK',
   description:
-    'UK-based Grace Technologies partners with Ank Square for website development, merchant account management, AI automation and digital marketing.',
+    'Grace Technologies provides merchant account management support for UK businesses, helping streamline payment operations and manage merchant accounts.',
   canonicalPath: '/',
   keywords: [
-    'Technology company UK',
-    'Digital solutions company',
-    'Business technology services',
-    'Website development UK',
-    'AI automation services UK',
-    'Merchant account management',
-    'Digital marketing agency UK',
+    'Merchant Account Management UK',
+    'Merchant Account Management Services UK',
+    'Merchant Account Management Company UK',
+    'Merchant Account Support UK',
+    'Merchant Account Services UK',
+    'Merchant Account Assistance',
+    'Merchant Account Setup Support',
+    'Payment Gateway Support',
+    'Payment Processing Support',
+    'E-commerce Payment Support',
+    'Transaction Monitoring',
+    'Payment Reconciliation Services',
+    'Chargeback Management Support',
+    'Merchant Account Reporting',
+    'Online Payment Management',
   ],
 });
 
@@ -46,9 +53,6 @@ export default function HomePage() {
       {/* SECTION 4 – FEATURED PROJECTS (REDESIGNED HORIZONTAL CAROUSEL & FILTERS) */}
       <Projects />
 
-      {/* SECTION 4B – PROVEN COMMERCIAL CLIENT ENGAGEMENTS */}
-      <ClientSection />
-
       {/* SECTION 5 – WHY GRACE TECHNOLOGIES */}
       <WhyChooseUs />
 
@@ -65,12 +69,12 @@ export default function HomePage() {
 
       {/* SECTION 10 – FINAL CTA */}
       <CTASection
-        title="Your Next Move Starts With a Conversation."
-        description="Let's discuss your ideas, challenges and opportunities. Together, we can build something meaningful."
-        primaryCtaText="Start a Conversation"
-        primaryCtaHref="#contact-section"
-        secondaryCtaText="Explore Capabilities"
-        secondaryCtaHref="/services"
+        title="Simplify Your Merchant Account Operations."
+        description="Talk with our team about account setup, payment operations, reconciliation, or e-commerce account support."
+        primaryCtaText="Get a Quote"
+        primaryCtaHref="/contact"
+        secondaryCtaText="Explore the Service"
+        secondaryCtaHref="/services/merchant-account-management"
       />
 
       {/* SECTION 10 – CONTACT SECTION */}

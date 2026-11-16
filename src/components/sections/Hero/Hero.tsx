@@ -28,7 +28,7 @@ export default function Hero() {
             >
               <span className={styles.badgePulse} />
               <span className={styles.badgeText}>
-                GLOBAL TECHNOLOGY PARTNERSHIP
+                MERCHANT ACCOUNT MANAGEMENT
               </span>
             </motion.div>
 
@@ -38,8 +38,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Technology and Digital Solutions for{' '}
-              <span className={styles.highlightText}>Growing Businesses</span>
+              Merchant Account Management Services for UK Businesses
             </motion.h1>
 
             <motion.p
@@ -48,7 +47,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
             >
-              Grace Technologies provides technology and digital solutions for growing UK businesses through website development, merchant account management, AI automation and digital marketing. We are UK-based and partnered with Ank Square in India.
+              We help businesses manage their merchant accounts and e-commerce payment operations through reliable account support, transaction monitoring, payment management and ongoing account maintenance.
             </motion.p>
             <motion.div
               className={styles.actions}
@@ -56,15 +55,15 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <Button href="/services" variant="primary" size="lg" icon>
-                Explore Our Services
+              <Button href="/services/merchant-account-management" variant="primary" size="lg" icon>
+                Merchant Account Management
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => openEnquiryModal()}
+                onClick={() => openEnquiryModal('Merchant Account Management')}
               >
-                Book a Free Consultation
+                Get a Quote
               </Button>
             </motion.div>
 
@@ -81,13 +80,13 @@ export default function Hero() {
               </div>
               <div className={styles.metricDivider} />
               <div className={styles.metricItem}>
-                <span className={styles.metricNum}>4 Pillars</span>
-                <span className={styles.metricLabel}>Web, Merchant, AI & Growth</span>
+                <span className={styles.metricNum}>One Core Service</span>
+                <span className={styles.metricLabel}>Merchant Account Management</span>
               </div>
               <div className={styles.metricDivider} />
               <div className={styles.metricItem}>
                 <span className={styles.metricNum}>Enterprise</span>
-                <span className={styles.metricLabel}>Engineering & Governance</span>
+                <span className={styles.metricLabel}>Payment & Account Operations</span>
               </div>
             </motion.div>
           </div>

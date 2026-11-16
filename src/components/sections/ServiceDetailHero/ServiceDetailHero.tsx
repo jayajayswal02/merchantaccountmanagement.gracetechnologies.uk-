@@ -52,12 +52,12 @@ export default function ServiceDetailHero({
                 variant="primary"
                 size="lg"
                 icon
-                onClick={() => openEnquiryModal(serviceTitle || tagline)}
+                onClick={() => openEnquiryModal(serviceTitle || 'Merchant Account Management')}
               >
-                Consult On This Service
+                Get a Quote
               </Button>
-              <Button href="#capabilities" variant="outline" size="lg">
-                View Capabilities
+              <Button href="/contact" variant="outline" size="lg">
+                Contact Us
               </Button>
             </div>
           </motion.div>

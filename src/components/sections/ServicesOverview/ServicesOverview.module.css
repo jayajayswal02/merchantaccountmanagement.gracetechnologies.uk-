@@ -14,7 +14,7 @@
 
 .serviceRow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   gap: clamp(2.5rem, 5vw, 5rem);
 }
@@ -30,12 +30,14 @@
 /* Visual Column */
 .visualCol {
   width: 100%;
+  min-width: 0;
 }
 
 /* Content Column */
 .contentCol {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .numberBadge {
@@ -115,7 +117,7 @@
 
 @media (max-width: 992px) {
   .serviceRow {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2.5rem;
   }
 

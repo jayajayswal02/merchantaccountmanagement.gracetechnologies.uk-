@@ -38,17 +38,25 @@
   margin-bottom: 0.875rem;
 }
 
-.capIconBullet {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--color-accent);
-  box-shadow: 0 0 8px var(--color-border-highlight);
+.capIcon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  color: var(--color-accent);
+  border: 1px solid var(--color-glass-medium);
   flex-shrink: 0;
 }
 
+.capIcon :global(svg) {
+  font-size: 1.5rem;
+}
+
 .capTitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-accent);
 }
@@ -57,6 +65,43 @@
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--color-text-secondary);
+}
+
+.advisoryNotice {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-glass-medium);
+  padding: 1.25rem 0;
+}
+
+.advisoryContent {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.advisoryIcon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.advisoryText {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.aboutCopy {
+  max-width: 860px;
+  display: grid;
+  gap: 1rem;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.aboutCopy p {
+  margin: 0;
 }
 
 /* Benefits */
@@ -118,6 +163,45 @@
   position: relative;
 }
 
+.whySection {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+  background-color: var(--color-surface-subtle);
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.whyCard {
+  padding: 1.75rem;
+  border: 1px solid var(--color-glass-medium);
+  border-radius: var(--radius-md);
+  background-color: var(--color-secondary);
+}
+
+.whyIcon {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.whyTitle {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.whyDesc {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 .stepNum {
   font-family: var(--font-heading);
   font-size: 1.75rem;
@@ -156,6 +240,10 @@
   .processGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .whyGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
@@ -165,4 +253,3 @@
     grid-template-columns: 1fr;
   }
 }
-

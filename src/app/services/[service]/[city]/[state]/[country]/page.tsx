@@ -44,8 +44,9 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
   const status = getLocationStatus(serviceSlug, citySlug, stateSlug, countrySlug);
   const canonicalUrl = `${SEO_CONFIG.siteUrl}/services/${service.slug}/${cityData.citySlug}/${cityData.stateSlug}/${cityData.countrySlug}`;
 
-  const metaTitle = `${service.name} in ${cityData.city} | Grace Technologies`;
-  const metaDescription = `Looking for professional ${service.name.toLowerCase()} in ${cityData.city}, ${cityData.state}? Grace Technologies provides UK-governed digital solutions, custom engineering, and remote delivery for ambitious enterprises.`;
+  const metaTitle = `${service.name} in ${cityData.city}, ${cityData.state}`;
+  const socialMetaTitle = `${metaTitle} | ${SEO_CONFIG.siteName}`;
+  const metaDescription = `Looking for ${service.name.toLowerCase()} in ${cityData.city}, ${cityData.state}? Grace Technologies supports account setup, payment workflows, transaction monitoring, and e-commerce operations.`;
 
   return {
     title: metaTitle,
@@ -54,7 +55,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: metaTitle,
+      title: socialMetaTitle,
       description: metaDescription,
       url: canonicalUrl,
       siteName: SEO_CONFIG.siteName,
@@ -63,15 +64,13 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       images: [
         {
           url: SEO_CONFIG.defaultOgImage,
-          width: 1200,
-          height: 630,
-          alt: `${service.name} in ${cityData.city}`,
+          alt: `${SEO_CONFIG.siteName} logo`,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: metaTitle,
+      title: socialMetaTitle,
       description: metaDescription,
       images: [SEO_CONFIG.defaultOgImage],
     },
@@ -123,33 +122,23 @@ export default async function LocationServicePage({ params }: LocationPageProps)
   const locationFaqs = [
     {
       question: `How much does ${service.name.toLowerCase()} cost for businesses in ${cityData.city}?`,
-      answer: `Pricing depends on your specific operational scope, custom software requirements, and integrations. Grace Technologies provides clear, milestone-driven estimates following an initial discovery consultation, avoiding ambiguous agency retainers.`,
+      answer: `Pricing depends on your accounts, providers, transaction workflows, and the level of ongoing support required. Grace Technologies provides a clear estimate after reviewing your operational needs.`,
     },
     {
       question: `Can businesses in ${cityData.city} work with Grace Technologies remotely?`,
-      answer: `Yes. Grace Technologies serves clients across ${cityData.city}, ${cityData.state}, and nationwide using streamlined digital project management, collaborative video sessions, and UK-governed communication channels.`,
+      answer: `Yes. Grace Technologies supports businesses across ${cityData.city}, ${cityData.state}, and nationwide through remote consultations and clear UK-led communication.`,
     },
     {
       question: `How does the UK leadership and India delivery model benefit ${cityData.city} enterprises?`,
-      answer: `Our commercial governance, client strategy, and project oversight are led from the UK, while our engineering partnership with Ank Square in India provides deep technical development bandwidth—delivering exceptional engineering quality with competitive cost efficiency.`,
+      answer: `Our client communication and account support are led from the UK, with delivery collaboration from Ank Square in India.`,
     },
     {
-      question: `Does Grace Technologies provide ongoing maintenance and post-launch support?`,
-      answer: `Yes. We provide continuous monitoring, security patching, Core Web Vitals optimization, and technical governance to ensure your digital infrastructure remains secure, fast, and competitive.`,
+      question: `Can you provide ongoing merchant account support?`,
+      answer: `Yes. Support can include account maintenance, transaction follow-up, payment reconciliation, and coordination with relevant providers.`,
     },
   ];
 
   const faqSchema = getFaqSchema(locationFaqs);
-
-  // Map service number for styling badge
-  const serviceNumberMap: Record<string, string> = {
-    'website-development': '01',
-    'ai-automation': '02',
-    'merchant-account-management': '03',
-    'digital-marketing': '04',
-  };
-
-  const serviceNumber = serviceNumberMap[service.slug] || '01';
 
   return (
     <div className={styles.page}>
@@ -168,10 +157,10 @@ export default async function LocationServicePage({ params }: LocationPageProps)
       {/* Dynamic Location Hero */}
       <ServiceDetailHero
         serviceId={service.slug}
-        number={serviceNumber}
+        number="01"
         tagline={`${cityData.city.toUpperCase()}, ${cityData.country.toUpperCase()}`}
         headline={`${service.primaryKeyword} in ${cityData.city}`}
-        description={`Grace Technologies delivers high-impact ${service.name.toLowerCase()} for forward-thinking enterprises in ${cityData.city}, ${cityData.state}. Engineered for speed, security, and measurable commercial growth.`}
+        description={`Grace Technologies supports businesses in ${cityData.city}, ${cityData.state} with merchant account setup, payment operations, and e-commerce account management.`}
         serviceTitle={service.name}
       />
 
@@ -185,10 +174,10 @@ export default async function LocationServicePage({ params }: LocationPageProps)
                 {service.name} Solutions Engineered for {cityData.city} Businesses
               </h2>
               <p className={styles.introParagraph}>
-                Whether your organisation is an established enterprise in {cityData.state} or an ambitious growing startup, our British-led technology advisory and engineering capabilities provide the robust infrastructure required to lead your sector.
+                Whether your organisation is an established enterprise in {cityData.state} or a growing business, our UK-led team can help organise merchant account and payment operations.
               </p>
               <p className={styles.introParagraph}>
-                We combine consultative clarity with modern technical frameworks. By adhering to strict UK commercial standards, GDPR compliance, and sub-second performance metrics, we ensure your digital assets generate qualified commercial enquiries.
+                We provide clear communication and practical support for account configuration, transaction monitoring, settlement records, and provider follow-up.
               </p>
             </div>
 
@@ -206,7 +195,7 @@ export default async function LocationServicePage({ params }: LocationPageProps)
                 </li>
                 <li className={styles.highlightItem}>
                   <CheckCircleOutlineOutlinedIcon className={styles.checkIcon} />
-                  <span>Delivery Model: UK Consultation & Governance</span>
+                  <span>Support Model: UK Consultation & Account Support</span>
                 </li>
                 <li className={styles.highlightItem}>
                   <CheckCircleOutlineOutlinedIcon className={styles.checkIcon} />
@@ -222,7 +211,7 @@ export default async function LocationServicePage({ params }: LocationPageProps)
           <SectionHeading
             label="WHAT WE DELIVER"
             title={`${service.name} Capabilities`}
-            description={`Comprehensive solutions tailored to the operational demands of modern ${cityData.city} companies.`}
+            description={`Merchant account and payment operations support for businesses in ${cityData.city}.`}
           />
           <div className={styles.capabilitiesGrid}>
             {service.capabilities.map((cap, index) => (
@@ -240,36 +229,36 @@ export default async function LocationServicePage({ params }: LocationPageProps)
           <SectionHeading
             label="OUR ADVANTAGE"
             title={`Why ${cityData.city} Enterprises Partner With Us`}
-            description="Clear strategic alignment, technical depth, and transparent commercial governance."
+            description="Responsive account support, clear communication, and practical operational coverage."
           />
           <div className={styles.whyUsGrid}>
             <div className={styles.whyUsCard}>
-              <h3 className={styles.whyUsTitle}>UK Commercial Governance</h3>
+              <h3 className={styles.whyUsTitle}>UK-Led Communication</h3>
               <p className={styles.whyUsDesc}>
-                Direct UK communication, clear contractual frameworks, and transparent milestone reporting give you total peace of mind throughout every phase.
+                Discuss your account needs directly with our UK team and receive clear updates and next steps.
               </p>
             </div>
             <div className={styles.whyUsCard}>
-              <h3 className={styles.whyUsTitle}>High-Impact Global Engineering</h3>
+              <h3 className={styles.whyUsTitle}>Practical Account Administration</h3>
               <p className={styles.whyUsDesc}>
-                Our bilateral partnership with Ank Square Private Limited in India provides enterprise-grade engineering bandwidth with unmatched cost advantages.
+                Get coordinated support across merchant accounts, payment gateways, and e-commerce operations.
               </p>
             </div>
             <div className={styles.whyUsCard}>
-              <h3 className={styles.whyUsTitle}>Uncompromising Performance</h3>
+              <h3 className={styles.whyUsTitle}>Ongoing Operational Support</h3>
               <p className={styles.whyUsDesc}>
-                We build exclusively with modern stacks (Next.js 16, React 19, TypeScript), delivering sub-second load times and elite Core Web Vitals rankings.
+                Keep transaction follow-up, reconciliation, and account maintenance moving through a consistent process.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Section 4: Development Process */}
+        {/* Section 4: Merchant Account Process */}
         <section className={styles.section}>
           <SectionHeading
             label="HOW WE WORK"
-            title="Our Delivery Framework"
-            description={`A structured, four-stage process engineered for predictability and rapid deployment in ${cityData.city}.`}
+            title="Our Working Process"
+            description={`A clear, four-stage process for account support and payment operations in ${cityData.city}.`}
           />
           <div className={styles.processGrid}>
             {service.process.map((p) => (
@@ -303,9 +292,11 @@ export default async function LocationServicePage({ params }: LocationPageProps)
       {/* Dynamic CTA */}
       <ServiceCTASection
         badge={`ELEVATE YOUR ${cityData.city.toUpperCase()} BUSINESS`}
-        title={`Discuss Your ${service.name} Project in ${cityData.city}`}
-        description={`Schedule an introductory consultation with our UK strategy team. We'll evaluate your requirements and outline a tailored roadmap.`}
-        primaryCtaText={`Enquire for ${cityData.city} →`}
+        title={`Get Merchant Account Support in ${cityData.city}`}
+        description={`Tell our UK team about your account setup, payment operations, or e-commerce support needs.`}
+        primaryCtaText="Get a Quote"
+        secondaryCtaText="Contact Us"
+        secondaryCtaHref="/contact"
         serviceTitle={service.name}
       />
     </div>

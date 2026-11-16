@@ -1,24 +1,24 @@
 /**
  * Central SEO Configuration for Grace Technologies
- * Primary canonical domain: https://www.gracetechnologies.uk
+ * Primary canonical domain: https://merchantaccountmanagement.gracetechnologies.uk
  */
 
 export const SEO_CONFIG = {
   siteName: 'Grace Technologies',
   legalName: 'Grace Technologies',
-  siteUrl: 'https://www.gracetechnologies.uk',
+  siteUrl: 'https://merchantaccountmanagement.gracetechnologies.uk',
   appleTouchIcon: '/apple-touch-icon.png',
-  defaultTitle: 'Grace Technologies | Digital & Technology Solutions',
+  defaultTitle: 'Merchant Account Management UK',
   titleTemplate: '%s | Grace Technologies',
   defaultDescription:
-    'A UK-led technology partner offering website development, merchant account management, AI automation & digital marketing solutions for growing businesses.',
-  defaultOgImage: 'https://www.gracetechnologies.uk/logo/logo.png',
+    'Grace Technologies provides merchant account management support for UK businesses, helping streamline payment operations and manage merchant accounts.',
+  defaultOgImage: 'https://merchantaccountmanagement.gracetechnologies.uk/logo/logo.png',
   locale: 'en_GB',
   inLocale: 'en_IN',
   language: 'en',
   themeColor: '#030712',
-  organizationId: 'https://www.gracetechnologies.uk/#organization',
-  websiteId: 'https://www.gracetechnologies.uk/#website',
+  organizationId: 'https://merchantaccountmanagement.gracetechnologies.uk/#organization',
+  websiteId: 'https://merchantaccountmanagement.gracetechnologies.uk/#website',
   contact: {
     uk: {
       company: 'Grace Technologies',
@@ -60,36 +60,14 @@ export const SEO_CONFIG = {
     'https://www.facebook.com/share/1CKuqfF3Ef/',
     'https://www.youtube.com/@Gracetechnologiesofficial',
     'https://x.com/grace_Official4',
-    'https://www.linkedin.com/',
   ],
   services: [
     {
-      id: 'website-development',
-      name: 'Website Development',
-      url: 'https://www.gracetechnologies.uk/services/website-development',
-      description:
-        'Custom business websites, Next.js web applications, e-commerce architectures, and technical performance engineering.',
-    },
-    {
       id: 'merchant-account-management',
       name: 'Merchant Account Management',
-      url: 'https://www.gracetechnologies.uk/services/merchant-account-management',
+      url: 'https://merchantaccountmanagement.gracetechnologies.uk',
       description:
-        'Professional merchant onboarding assistance, multi-currency payment operations support, and gateway integrations.',
-    },
-    {
-      id: 'ai-automation',
-      name: 'AI Automation',
-      url: 'https://www.gracetechnologies.uk/services/ai-automation',
-      description:
-        'Intelligent business process automation, autonomous agentic workflows, CRM integrations, and predictive pipelines.',
-    },
-    {
-      id: 'digital-marketing',
-      name: 'Digital Marketing & SEO',
-      url: 'https://www.gracetechnologies.uk/services/digital-marketing',
-      description:
-        'Data-driven organic search engine optimisation (SEO), Generative Engine Optimisation (GEO), and omnichannel ad campaigns.',
+        'Merchant account setup and maintenance, payment gateway coordination, transaction monitoring, reconciliation, and e-commerce account support.',
     },
   ],
 } as const;

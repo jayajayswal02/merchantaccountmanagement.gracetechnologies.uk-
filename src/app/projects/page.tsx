@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import Container from '@/components/common/Container/Container';
 import SectionHeading from '@/components/common/SectionHeading/SectionHeading';
 import ServiceCTASection from '@/components/sections/ServiceCTASection/ServiceCTASection';
-import ClientSection from '@/components/sections/ClientSection/ClientSection';
 import Breadcrumb from '@/components/common/Breadcrumb/Breadcrumb';
 import JsonLd from '@/components/seo/JsonLd';
 import { constructMetadata } from '@/lib/seo/metadata';
@@ -15,16 +14,15 @@ import { ProjectItem } from '@/data/projects';
 import styles from './projects.module.css';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Our Projects & Case Studies | Grace Technologies',
+  title: 'Merchant Account Management Work | Grace Technologies',
   description:
-    'Browse Grace Technologies case studies for UK and international clients, from website development and merchant services to AI automation and marketing.',
+    'Explore merchant account management work covering account support, transaction monitoring and payment operations.',
   canonicalPath: '/projects',
   keywords: [
     'Grace Technologies projects',
-    'Web development case studies',
-    'Merchant management case studies',
-    'AI automation examples UK',
-    'Digital transformation portfolio',
+    'Merchant account management case studies',
+    'Payment operations projects',
+    'E-commerce account support portfolio',
   ],
 });
 
@@ -51,8 +49,8 @@ export default function ProjectsPage() {
         <Container size="wide">
           <SectionHeading
             label="OUR PORTFOLIO"
-            title="Ideas Into Real Digital Solutions."
-            description="See how ideas become real digital solutions through our website development, merchant operations, AI automation and digital marketing projects."
+            title="Merchant Account Management in Practice"
+            description="Explore selected work focused on merchant account support, transaction oversight and payment reconciliation."
             align="center"
             headingLevel="h1"
           />
@@ -67,11 +65,12 @@ export default function ProjectsPage() {
  
       {/* Conversion CTA with modal trigger */}
       <ServiceCTASection
-        title="Have an Ambitious Project in Mind?"
-        description="Connect with our UK consulting team to discuss your architectural roadmap, specifications, and commercial timeline."
-        primaryCtaText="Initiate Project Discovery"
-        secondaryCtaText="Explore Capabilities"
-        secondaryCtaHref="/services"
+        title="Need Support With Your Merchant Accounts?"
+        description="Talk with our UK team about account administration, payment workflows, and e-commerce operations."
+        primaryCtaText="Get a Quote"
+        serviceTitle="Merchant Account Management"
+        secondaryCtaText="Contact Us"
+        secondaryCtaHref="/contact"
       />
     </div>
   );

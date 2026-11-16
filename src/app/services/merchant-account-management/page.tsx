@@ -5,7 +5,16 @@ import SectionHeading from '@/components/common/SectionHeading/SectionHeading';
 import ServiceDetailHero from '@/components/sections/ServiceDetailHero/ServiceDetailHero';
 import FaqAccordion from '@/components/sections/FaqAccordion/FaqAccordion';
 import ServiceCTASection from '@/components/sections/ServiceCTASection/ServiceCTASection';
+import AccountBalanceOutlinedIcon from '@mui/icons-material/AccountBalanceOutlined';
+import SettingsSuggestOutlinedIcon from '@mui/icons-material/SettingsSuggestOutlined';
+import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
+import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
+import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOutlined';
+import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
+import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutlineOutlined';
 import Breadcrumb from '@/components/common/Breadcrumb/Breadcrumb';
 import JsonLd from '@/components/seo/JsonLd';
 import { constructMetadata } from '@/lib/seo/metadata';
@@ -14,40 +23,81 @@ import { SEO_CONFIG } from '@/lib/seo/config';
 import { SERVICES_DATA } from '@/config/site';
 import styles from '../service-page.module.css';
 
-const service = SERVICES_DATA[1]; // Merchant Account Management
+const service = SERVICES_DATA[0];
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Merchant Account Management Services',
+  title: 'Merchant Account Management Services UK',
+  titleSuffix: 'Grace Technologies',
   description:
-    'Get UK merchant account management support from Grace Technologies, from onboarding and account setup to product catalogues and payment operations.',
+    'Explore merchant account management support from Grace Technologies, helping businesses manage merchant accounts, payment processes and account operations.',
   canonicalPath: '/services/merchant-account-management',
   keywords: [
-    'Merchant account management services',
-    'Merchant account support',
-    'Merchant onboarding assistance',
-    'Payment operations management',
-    'Payment integration support',
-    'E-commerce payment management',
+    'Merchant Account Management Services UK',
+    'Merchant Account Management UK',
+    'Merchant Account Management Company UK',
+    'Merchant Account Support UK',
+    'Merchant Account Services UK',
+    'Merchant Account Assistance',
+    'Merchant Account Setup Support',
+    'Payment Gateway Support',
+    'Payment Processing Support',
+    'E-commerce Payment Support',
+    'Transaction Monitoring',
+    'Payment Reconciliation Services',
+    'Chargeback Management Support',
+    'Merchant Account Reporting',
+    'Online Payment Management',
   ],
 });
 
+const featureIcons = [
+  <AccountBalanceOutlinedIcon key="setup" />,
+  <SettingsSuggestOutlinedIcon key="gateway" />,
+  <StorefrontOutlinedIcon key="seller-accounts" />,
+  <MonitorHeartOutlinedIcon key="monitoring" />,
+  <CurrencyExchangeOutlinedIcon key="reconciliation" />,
+  <SupportAgentOutlinedIcon key="disputes" />,
+  <ManageAccountsOutlinedIcon key="maintenance" />,
+  <ShoppingCartOutlinedIcon key="e-commerce" />,
+];
+
+const reasonsToChoose = [
+  {
+    title: 'Practical, Account-Focused Support',
+    description:
+      'Work with a team focused on the day-to-day details of merchant accounts and payment operations.',
+  },
+  {
+    title: 'Clear Communication',
+    description:
+      'Receive straightforward updates, organised records, and clear next steps when account issues arise.',
+  },
+  {
+    title: 'Flexible Operational Coverage',
+    description:
+      'Get support across setup, maintenance, marketplaces, payment gateways, and transaction follow-up.',
+  },
+];
+
 export default function MerchantAccountManagementPage() {
   const serviceSchema = getServiceSchema({
-    name: 'Merchant Account Management & Operational Support',
-    description:
-      'Strategic onboarding assistance, multi-currency payment operations advisory, product catalog management, and payment gateway coordination.',
+    name: 'Merchant Account Management',
+    description: service.description,
     url: `${SEO_CONFIG.siteUrl}/services/merchant-account-management`,
-    serviceType: 'Merchant Operations Management',
+    serviceType: 'Merchant Account Management',
   });
 
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: 'Home', url: SEO_CONFIG.siteUrl },
     { name: 'Services', url: `${SEO_CONFIG.siteUrl}/services` },
-    { name: 'Merchant Account Management', url: `${SEO_CONFIG.siteUrl}/services/merchant-account-management` },
+    {
+      name: 'Merchant Account Management',
+      url: `${SEO_CONFIG.siteUrl}/services/merchant-account-management`,
+    },
   ]);
 
   const faqSchema = getFaqSchema(
-    service.faqs ? service.faqs.map((f) => ({ question: f.question, answer: f.answer })) : []
+    service.faqs.map(({ question, answer }) => ({ question, answer }))
   );
 
   return (
@@ -62,103 +112,156 @@ export default function MerchantAccountManagementPage() {
         backLabel="Back to Services"
       />
 
-      {/* Hero with Visual */}
       <ServiceDetailHero
         serviceId={service.id}
         serviceTitle={service.title}
         number={service.number}
-        tagline={service.tagline}
-        headline={service.headline}
+        tagline="Payment and e-commerce operations support"
+        headline="Professional Merchant Account Management Solutions"
         description={service.description}
       />
 
-      {/* Mandatory Advisory Notice / Regulatory Disclaimer */}
-      <div style={{ backgroundColor: 'var(--color-surface)', borderBottom: '1px solid var(--color-glass-medium)', padding: '1.25rem 0' }}>
+      <div className={styles.advisoryNotice}>
         <Container size="wide">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
-            <InfoOutlinedIcon style={{ color: 'var(--color-accent)', flexShrink: 0 }} />
-            <p style={{ fontSize: '0.8125rem', color: 'var(--color-text-primary)', margin: 0 }}>
-              <strong>Advisory & Management Disclaimer:</strong> Grace Technologies provides strategic consulting, onboarding guidance, product catalog listing management, and merchant account administrative coordination. We are not a bank, payment processor, or regulated financial institution, and do not guarantee merchant account approvals. All approval determinations remain solely with independent acquiring institutions.
+          <div className={styles.advisoryContent}>
+            <InfoOutlinedIcon className={styles.advisoryIcon} />
+            <p className={styles.advisoryText}>
+              <strong>Advisory &amp; Management Disclaimer:</strong> Grace
+              Technologies provides account administration, onboarding
+              guidance, and payment operations support. We are not a bank,
+              payment processor, or regulated financial institution, and
+              cannot guarantee account approvals. Approval decisions remain
+              with independent providers.
             </p>
           </div>
         </Container>
       </div>
 
-      {/* Capabilities Section */}
+      <section className={styles.section}>
+        <Container size="wide">
+          <SectionHeading
+            label="ABOUT THE SERVICE"
+            title="About Our Merchant Account Management Service"
+            description="Practical support to help businesses organise payment accounts and keep essential e-commerce operations running smoothly."
+            align="left"
+          />
+          <div className={styles.aboutCopy}>
+            <p>
+              Our merchant account management services help UK businesses
+              organise account setup, provider settings, seller account
+              administration, transaction monitoring, settlements, and dispute
+              follow-up in a clear operating process.
+            </p>
+            <p>
+              We work alongside your team to maintain merchant accounts,
+              coordinate payment gateway management, review payment records,
+              and support e-commerce account management. We provide
+              administrative and operational support, not payment processing
+              or account approval decisions.
+            </p>
+          </div>
+        </Container>
+      </section>
+
       <section id="capabilities" className={styles.section}>
         <Container size="wide">
           <SectionHeading
-            label="TURNKEY OPERATIONS"
-            title="Comprehensive Merchant Store & Catalog Solutions."
-            description="From initial merchant portal registration to bulk product catalog taxonomy, asset ingestion, and multi-channel inventory synchronization."
+            label="WHAT WE SUPPORT"
+            title="Merchant Account Management Services"
+            description="Support for merchant account setup, payment gateway management, seller account administration, transaction monitoring, and reconciliation."
             align="left"
           />
 
           <div className={styles.capabilitiesGrid}>
-            {service.capabilities.map((cap) => (
-              <div key={cap.title} className={styles.capCard}>
+            {service.capabilities.map((capability, index) => (
+              <article key={capability.title} className={styles.capCard}>
                 <div className={styles.capHeader}>
-                  <div className={styles.capIconBullet} />
-                  <h3 className={styles.capTitle}>{cap.title}</h3>
+                  <span className={styles.capIcon} aria-hidden="true">
+                    {featureIcons[index]}
+                  </span>
+                  <h3 className={styles.capTitle}>{capability.title}</h3>
                 </div>
-                <p className={styles.capDesc}>{cap.description}</p>
-              </div>
+                <p className={styles.capDesc}>{capability.description}</p>
+              </article>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Benefits Section */}
       <section className={styles.benefitsSection}>
         <Container size="wide">
           <SectionHeading
-            label="COMMERCIAL ADVANTAGES"
-            title="Accelerate Store Launch & Maximize Sales Velocity."
-            description="Eliminate tedious administrative backlogs and launch professionally formatted product catalogs ready to convert."
+            label="KEY BENEFITS"
+            title="Key Benefits of Merchant Account Management"
+            description="Establish consistent routines and better visibility across accounts, transactions, and settlements."
             align="left"
           />
 
           <div className={styles.benefitsGrid}>
-            {service.benefits.map((benefit, i) => (
-              <div key={benefit.title} className={styles.benefitCard}>
-                <span className={styles.benefitIndex}>0{i + 1}</span>
+            {service.benefits.map((benefit, index) => (
+              <article key={benefit.title} className={styles.benefitCard}>
+                <span className={styles.benefitIndex}>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
                 <h3 className={styles.benefitTitle}>{benefit.title}</h3>
                 <p className={styles.benefitDesc}>{benefit.description}</p>
-              </div>
+              </article>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Process Section */}
       <section className={styles.section}>
         <Container size="wide">
           <SectionHeading
-            label="DEPLOYMENT WORKFLOW"
-            title="Our 4-Stage Store Management Lifecycle."
-            description="A structured roadmap designed to set up, populate, verify, and scale your merchant digital presence."
+            label="OUR WORKING PROCESS"
+            title="Our Working Process"
+            description="We follow a practical workflow that keeps responsibilities and next steps clear."
             align="center"
           />
 
           <div className={styles.processGrid}>
             {service.process.map((step) => (
-              <div key={step.step} className={styles.processCard}>
+              <article key={step.step} className={styles.processCard}>
                 <div className={styles.stepNum}>{step.step}</div>
                 <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepDesc}>{step.description}</p>
-              </div>
+              </article>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* FAQs Section */}
+      <section className={styles.whySection}>
+        <Container size="wide">
+          <SectionHeading
+            label="WHY GRACE TECHNOLOGIES"
+            title="Why Choose Grace Technologies?"
+            description="Get responsive account support from a UK-led team with clear communication and a practical approach."
+            align="left"
+          />
+
+          <div className={styles.whyGrid}>
+            {reasonsToChoose.map((reason) => (
+              <article key={reason.title} className={styles.whyCard}>
+                <CheckCircleOutlineOutlinedIcon
+                  className={styles.whyIcon}
+                  aria-hidden="true"
+                />
+                <h3 className={styles.whyTitle}>{reason.title}</h3>
+                <p className={styles.whyDesc}>{reason.description}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className={styles.faqSection}>
         <Container size="narrow">
           <SectionHeading
-            label="FREQUENT QUESTIONS"
-            title="Merchant Account Management FAQs."
-            description="Everything you need to know about our account creation, product listing, and store management services."
+            label="FREQUENTLY ASKED QUESTIONS"
+            title="Frequently Asked Questions"
+            description="Answers to common questions about our account setup and payment operations support."
             align="center"
           />
 
@@ -166,11 +269,12 @@ export default function MerchantAccountManagementPage() {
         </Container>
       </section>
 
-      {/* Enquiry CTA */}
       <ServiceCTASection
-        title="Ready to Launch or Optimize Your Merchant Operations?"
-        description="Speak with our UK advisory team today to discuss your store setup, catalog taxonomy, and platform onboarding."
-        primaryCtaText="Consult With Our Team"
+        title="Get a Quote for Merchant Account Management"
+        description="Tell us about your accounts and the operational support your business needs."
+        primaryCtaText="Get a Quote"
+        secondaryCtaText="Contact Us"
+        secondaryCtaHref="/contact"
         serviceTitle={service.title}
       />
     </div>

@@ -6,10 +6,7 @@ import styles from './ProjectFilters.module.css';
 
 export const CATEGORIES = [
   'All Projects',
-  'Website Development',
   'Merchant Account Management',
-  'AI Automation',
-  'Digital Marketing',
 ] as const;
 
 export type CategoryFilter = (typeof CATEGORIES)[number];
@@ -51,4 +48,3 @@ export default function ProjectFilters({
     </div>
   );
 }
-

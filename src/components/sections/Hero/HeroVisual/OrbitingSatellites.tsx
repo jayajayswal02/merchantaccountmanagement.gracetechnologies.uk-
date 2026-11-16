@@ -16,33 +16,9 @@ export interface SatelliteData {
 
 const satellites: SatelliteData[] = [
   {
-    id: 'website-development',
-    title: 'WEBSITE DEVELOPMENT',
-    subtitle: 'Modern Web Experiences',
-    href: '/services/website-development',
-    icon: 'code',
-    orbitAngleDeg: 0,
-  },
-  {
-    id: 'digital-marketing',
-    title: 'DIGITAL MARKETING',
-    subtitle: 'Growth & Performance',
-    href: '/services/digital-marketing',
-    icon: 'trending',
-    orbitAngleDeg: 90,
-  },
-  {
-    id: 'ai-automation',
-    title: 'AI AUTOMATION',
-    subtitle: 'Intelligent Workflows',
-    href: '/services/ai-automation',
-    icon: 'ai',
-    orbitAngleDeg: 180,
-  },
-  {
     id: 'merchant-account-management',
-    title: 'MERCHANT MANAGEMENT',
-    subtitle: 'Payments & Business Operations',
+    title: 'MERCHANT ACCOUNT MANAGEMENT',
+    subtitle: 'Payments & E-commerce Operations',
     href: '/services/merchant-account-management',
     icon: 'cart',
     orbitAngleDeg: 270,

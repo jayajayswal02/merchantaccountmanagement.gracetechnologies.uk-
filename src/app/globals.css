@@ -70,6 +70,9 @@
   --color-glass-medium: rgba(255, 255, 255, 0.85);
 
   --color-whatsapp-green: #25D366;
+  --color-whatsapp-green-soft: rgba(37, 211, 102, 0.12);
+  --color-whatsapp-green-border: rgba(37, 211, 102, 0.28);
+  --color-blue-soft: rgba(var(--color-accent-rgb), 0.12);
 
   /* ----------------------------------------------------
    BORDERS
